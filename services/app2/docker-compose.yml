@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  app1:
+    build: .
+    environment:
+      - ZOOKEEPER_HOSTS=host.docker.internal:2181,host.docker.internal:2182,host.docker.internal:2183
+      - PYTHONUNBUFFERED=1
+      #172.21.0.2
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
